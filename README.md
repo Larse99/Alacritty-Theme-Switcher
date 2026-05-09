@@ -12,31 +12,31 @@ ats -c              # show the currently active theme
 
 ## Installation
 
-**Build from source:**
+**One-liner:**
 
 ```bash
-git clone https://github.com/leissink/Alacritty-Theme-Switcher
+curl -fsSL https://raw.githubusercontent.com/Larse99/Alacritty-Theme-Switcher/main/install.sh | bash
+```
+
+**Or clone and run the install script manually:**
+
+```bash
+git clone https://github.com/Larse99/Alacritty-Theme-Switcher
 cd Alacritty-Theme-Switcher
-go build -o ats ./cmd/
+bash install.sh
 ```
 
-Then move the binary somewhere on your `$PATH`:
+The script builds the binary and compresses it with [UPX](https://upx.github.io/) if available. Then move it somewhere on your `$PATH`:
 
 ```bash
-mv ats ~/.local/bin/
-```
-
-**Or install directly with go install:**
-
-```bash
-go install ats@latest
+mv Alacritty-Theme-Switcher/ats ~/.local/bin/
 ```
 
 ## Setup
 
 ### 1. Alacritty config
 
-Add the following import to your Alacritty config (`~/.config/alacritty/.alacritty.toml`):
+Add the following import to your Alacritty config (`~/.config/alacritty/alacritty.toml`):
 
 ```toml
 [general]
@@ -61,7 +61,7 @@ On first run, `ats` creates a config file at `~/.config/ats/config.toml` with th
 
 ```toml
 [paths]
-alacritty_config = "~/.config/alacritty/.alacritty.toml"
+alacritty_config = "~/.config/alacritty/alacritty.toml"
 current_theme = "~/.config/alacritty/current-theme.toml"
 themes_dir = "~/.config/alacritty/themes"
 ```
